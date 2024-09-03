@@ -76,4 +76,4 @@ const generatePhrase = (iterations) => {
     
 }
 //Randomly selects array element in each array
-console.log(generatePhrase(3));
+console.log(generatePhrase(30));
