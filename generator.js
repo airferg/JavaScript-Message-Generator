@@ -11,11 +11,15 @@ const introPhrases = ["Well, son,", "Listen up,", "Here’s a tip from your old 
 
 
 //Storage of Beer advice (Second piece of data)
-const beerAdvice = ["Always keep your beer cold, like your ex's heart.", "If the beer is warm, your day is wrong.", 
+const beerAdvice = ["Always keep your beer cold, like your ex's heart.", 
+    "If the beer is warm, your day is wrong.", 
     "A six-pack is good for two things: your fridge and your abs.",
     "Never drink beer with a straw, it’s against nature.", 
-    "IPA stands for 'I Prefer Alcohol'.", "If your beer tastes like water, you're drinking water.", 
-    "There’s a reason they call it a 'growler'.", "The best beer is an open one.", "Life is too short to drink bad beer.",
+    "IPA stands for 'I Prefer Alcohol'.", 
+    "If your beer tastes like water, you're drinking water.", 
+    "There’s a reason they call it a 'growler'.",
+    "The best beer is an open one.", 
+    "Life is too short to drink bad beer.",
     "Beer before wine, you’ll be fine; beer before breakfast, you’re probably on vacation.", "A beer a day keeps the boring away.", 
     "You can't trust someone who says they don't like beer.", "Never argue with someone holding a pint; they’re clearly in the right.",
     "Hops are nature’s gift to mankind.", "Beer doesn’t ask silly questions, beer understands.", 
@@ -43,5 +47,33 @@ const outroPhrases = ["And that’s why they call it 'hops-itality'.", "Now, let
 
 //Generator part
 
-//Randomly selects array element in each array
+const generatePhrase = (iterations) => {
 
+    console.log(typeof iterations);
+
+    
+    let completeArray =[];
+
+
+    if (typeof iterations !== 'number'){
+        return 'parameter must be a number';
+    }
+
+    for (let i = 0; i < iterations; i++){
+        let phraseArray = [];
+
+        let introSpot = introPhrases[Math.floor(Math.random() * introPhrases.length)];
+        let beerSpot = beerAdvice[Math.floor(Math.random() * beerAdvice.length)];
+        let outroSpot = outroPhrases[Math.floor(Math.random() * outroPhrases.length)];
+
+        phraseArray.push(introSpot, beerSpot, outroSpot)
+        finalString = phraseArray.join(' ');
+        completeArray.push(finalString);
+    }
+
+    return completeArray;
+    
+    
+}
+//Randomly selects array element in each array
+console.log(generatePhrase(3));
