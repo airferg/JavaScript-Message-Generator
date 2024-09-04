@@ -48,9 +48,6 @@ const outroPhrases = ["And that’s why they call it 'hops-itality'.", "Now, let
 //Generator part
 
 const generatePhrase = (iterations) => {
-
-    console.log(typeof iterations);
-
     
     let completeArray =[];
 
